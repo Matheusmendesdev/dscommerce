@@ -1,12 +1,19 @@
 package com.matheusmendesdev.Dscommerce.dto;
 
 import com.matheusmendesdev.Dscommerce.entities.Product;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 
 public class ProductDTO {
 
     private Long id;
+    @Size(min = 3, max = 80, message = "Field should to have min 3 character")
+    @NotBlank(message = "Requerid field")
     private String name;
+    @Size(min = 10, message = "Field should to have min 10 character")
     private String description;
+    @Positive(message = "Price should to be positive")
     private Double price;
     private String imgUrl;
 
