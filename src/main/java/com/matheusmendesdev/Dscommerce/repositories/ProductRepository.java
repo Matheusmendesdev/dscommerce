@@ -11,8 +11,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 	
+<<<<<<< HEAD
 	@Query("SELECT obj FROM Product obj " +
 			"WHERE UPPER(obj.name) " +
 			"LIKE UPPER(CONCAT('%', :name, '%'))")
+=======
+	@Query("SELECT obj FROM Product obj WHERE UPPER(obj.name) LIKE UPPER(CONCAT('%', :name, '%'))")
+>>>>>>> daeff5e3a74b9f34ce245280bb81afdb708e7cb2
 	Page<Product> searchByName(String name, Pageable pageable);
 }
